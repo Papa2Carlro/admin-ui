@@ -1,0 +1,27 @@
+{% set title = "Sign in" %}
+{% set app_class = "app--auth" %}
+
+{% extends "layouts/_auth.njk" %}
+{% import "components/_index.njk" as components %}
+
+{% set setting = {
+  image: 'bg.jpg',
+  logo: {
+    image: 'logo',
+    position: 'top-right'
+  },
+  title: {
+    label: 'Sign in',
+    position: 'bottom-right'
+  }
+} %}
+
+{% block content %}
+
+  <main class="auth" role="main">
+
+    {{ components.authBg(setting) }}
+
+  </main>
+
+{% endblock %}

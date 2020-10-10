@@ -1,0 +1,15 @@
+{% macro authBg(bg) %}
+
+  <div class="auth__bg">
+
+    <div class="auth__bg-logo auth__bg-logo--{{ bg.logo.position }}">
+      <img class="auth__bg-logo-image" src="/static/img/stub/{{ bg.logo.image }}.png" alt="">
+    </div>
+
+    <div style="color: white" class="auth__bg-label auth__bg-label--{{ bg.title.position }}">{{ bg.title.label }}</div>
+
+    <img class="auth__bg-image" loading="lazy" src="/static/img/auth/{{ bg.image }}" alt="">
+
+  </div>
+
+{% endmacro %}

@@ -1,0 +1,168 @@
+.auth {
+  width: 100vw;
+  height: 100vh;
+
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+
+  &__bg {
+    position: relative;
+
+    &-label {
+      position: absolute;
+      z-index: 1;
+
+      @include s600-17;
+      line-height: 100%;
+
+      &--top-left {
+        top: map-get($spacers, 50);
+        left: map-get($spacers, 40);
+      }
+      &--top-right {
+        top: map-get($spacers, 50);
+        right: map-get($spacers, 40);
+      }
+      &--top-center {
+        left: 0;
+        right: 0;
+        text-align: center;
+        top: map-get($spacers, 50);
+      }
+
+      &--bottom-left {
+        left: map-get($spacers, 40);
+        bottom: map-get($spacers, 50);
+      }
+      &--bottom-right {
+        right: map-get($spacers, 40);
+        bottom: map-get($spacers, 50);
+      }
+      &--bottom-center {
+        left: 0;
+        right: 0;
+        text-align: center;
+        bottom: map-get($spacers, 50);
+      }
+
+      &--center-left {
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+      }
+      &--center-right {
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+      }
+      &--center-center {
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+    }
+
+    &-logo {
+      $spacerV: 30;
+      $spacerH: 20;
+      $logo: &;
+
+      z-index: 1;
+      display: flex;
+      position: absolute;
+
+      &--top-left {
+        top: map-get($spacers, $spacerV);
+        left: map-get($spacers, $spacerH);
+      }
+      &--top-right {
+        top: map-get($spacers, $spacerV);
+        right: map-get($spacers, $spacerH);
+      }
+      &--top-center {
+        left: 0;
+        right: 0;
+        top: map-get($spacers, 50);
+
+        #{$logo}-image {
+          margin: 0 auto;
+        }
+      }
+
+      &--bottom-left {
+        left: map-get($spacers, $spacerV);
+        bottom: map-get($spacers, $spacerH);
+      }
+      &--bottom-right {
+        right: map-get($spacers, $spacerV);
+        bottom: map-get($spacers, $spacerH);
+      }
+      &--bottom-center {
+        left: 0;
+        right: 0;
+        bottom: map-get($spacers, $spacerH);
+
+        #{$logo}-image {
+          margin: 0 auto;
+        }
+      }
+
+      &--center-left {
+        top: 0;
+        left: map-get($spacers, $spacerH);
+        right: 0;
+        bottom: 0;
+
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+      }
+      &--center-right {
+        top: 0;
+        left: 0;
+        right: map-get($spacers, $spacerH);
+        bottom: 0;
+
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+      }
+      &--center-center {
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+    }
+
+    &-image {
+      @extend .fit;
+
+      position: absolute;
+      top: 0;
+      left: 0;
+
+      width: 100%;
+      height: 100%;
+    }
+  }
+}
