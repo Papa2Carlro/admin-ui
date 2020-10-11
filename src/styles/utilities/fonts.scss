@@ -1,1 +1,7 @@
 @include font-face("Nunito", "/static/font/Nunito/Nunito-Bold/Nunito-Bold", normal, bold);
+
+@include font-face("Noto Sans", "/static/font/NotoSans/NotoSans-Regular", normal, normal);
+@include font-face("Noto Sans", "/static/font/NotoSans/NotoSans-Medium", normal, 500);
+
+@include font-face("Ubuntu", "/static/font/Ubuntu/Ubuntu-Regular/Ubuntu-Regular", normal, normal);
+@include font-face("Ubuntu", "/static/font/Ubuntu/Ubuntu-Medium/Ubuntu-Medium", normal, 500);

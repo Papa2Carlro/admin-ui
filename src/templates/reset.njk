@@ -4,11 +4,43 @@
 {% extends "layouts/_default.njk" %}
 {% import "components/_index.njk" as components %}
 
+{% set setting = {
+  image: 'bg.jpg',
+  logo: {
+    image: 'logo',
+    position: 'top-right'
+  },
+  title: {
+    label: 'Reset password',
+    position: 'bottom-right'
+  }
+} %}
+
 {% block content %}
 
-  <main class="main" role="main">
+  <main class="auth" role="main">
 
+    {{ components.authBg(setting) }}
 
+    <div class="auth__panel">
+
+      <form action="#" class="auth__form">
+
+        <div class="auth__form-title">Enter password to continue </div>
+
+        {{ components.authInput('auth__form', { placeholder: 'Password', id: 'password', type: 'password' }) }}
+
+        {{ components.authInput('auth__form', { placeholder: 'Confirm password', id: 'confirm_password', type: 'password' }) }}
+
+        <div class="auth__form-action">
+          <a href="/auth/login.html" class="auth__form-forgot link">Sing in?</a>
+        </div>
+
+        <button class="auth__form-submit" type="submit">Send</button>
+
+      </form>
+
+    </div>
 
   </main>
 

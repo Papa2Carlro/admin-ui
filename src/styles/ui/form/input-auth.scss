@@ -1,0 +1,74 @@
+.input-auth {
+  $parent: &;
+  $heightInput: 80px;
+
+  position: relative;
+  box-sizing: border-box;
+
+  font-family: Ubuntu, sans-serif;
+
+  &__body {
+    width: 100%;
+    height: $heightInput;
+
+    @include s400-9;
+    color: $gray2;
+
+    outline: none;
+    border-radius: 10px;
+    border: 1px solid $gray4;
+
+    padding: map-get($spacers, 25) map-get($spacers, 25) 0;
+
+    transition: border $transTimeFast $easeInOut, box-shadow $transTimeFast $easeInOut;
+
+    &:focus {
+      border: 1px solid $purple3;
+
+      box-shadow: -1px 0px 9px 1px rgba($purple3, 0.25);
+    }
+  }
+
+  &__placeholder {
+    position: absolute;
+    top: 0;
+    left: map-get($spacers, 25);
+
+    pointer-events: none;
+    height: $heightInput;
+
+    display: flex;
+    align-items: center;
+
+    color: $gray4;
+    @include s400-9;
+
+    transition: font-size $transTimeFast $easeIn, padding $transTimeFast $easeInOut;
+
+    &.isActive {
+      @include s400-6;
+      padding: 0 0 map-get($spacers, 35);
+    }
+  }
+
+  &__eye {
+    position: absolute;
+    top: 0;
+    right: map-get($spacers, 25);
+
+    height: $heightInput;
+
+    display: flex;
+    align-items: center;
+
+    color: $gray4;
+
+    .icon {
+      cursor: pointer;
+    }
+  }
+
+  & + & {
+    margin: map-get($spacers, 15) 0 0;
+  }
+}

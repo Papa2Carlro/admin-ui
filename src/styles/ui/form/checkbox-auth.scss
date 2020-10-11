@@ -1,0 +1,67 @@
+.checkbox-auth {
+  $parent: &;
+
+  position: relative;
+
+  &__body {
+    position: absolute;
+    z-index: -1;
+    opacity: 0;
+
+    &:checked + #{$parent}__label:before {
+      opacity: 1;
+
+    }
+  }
+
+  &__body + &__label {
+    $label: &;
+
+    color: $gray3;
+    line-height: 100%;
+    font-family: Ubuntu, sans-serif;
+
+    margin-bottom: 0;
+
+    display: flex;
+    align-items: center;
+
+    padding: 0 0 0 map-get($spacers, 25);
+
+    user-select: none;
+
+    &:after {
+      content: '';
+      display: block;
+      cursor: pointer;
+
+      left: 0;
+      position: absolute;
+
+      width: 15px;
+      height: 15px;
+
+      border: 1px solid $purple3;
+      border-radius: 2px;
+    }
+
+    &:before {
+      content: '';
+      display: block;
+
+      left: 2px;
+      bottom: 3px;
+
+      position: absolute;
+
+      width: 12px;
+      height: 12px;
+
+      opacity: 0;
+
+      transition: opacity $transTimeSuperFast $easeInOut;
+
+      background: url(/static/img/icons/icon-check.svg) 0 0/cover no-repeat;
+    }
+  }
+}

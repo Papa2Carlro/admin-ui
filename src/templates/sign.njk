@@ -22,6 +22,28 @@
 
     {{ components.authBg(setting) }}
 
+    <div class="auth__panel">
+
+      <form action="#" class="auth__form">
+
+        <div class="auth__form-title">Login to continue</div>
+
+        {{ components.authInput('auth__form', { placeholder: 'Email or nickname', id: 'login', type: 'text' }) }}
+
+        {{ components.authInput('auth__form', { placeholder: 'Password', id: 'password', type: 'password' }) }}
+
+        <div class="auth__form-action">
+          {{ components.authCheckbox('auth__form', 'Remember me', 'remember') }}
+
+          <a href="/auth/reset.html" class="auth__form-forgot link">Forgot password?</a>
+        </div>
+
+        <button class="auth__form-submit" type="submit">Login</button>
+
+      </form>
+
+    </div>
+
   </main>
 
 {% endblock %}

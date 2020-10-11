@@ -21,13 +21,13 @@ a {
   color: currentColor;
 
   &:active {
-    color: $gray10;
+    //color: $gray10;
     text-decoration: none;
   }
 
   @include media-breakpoint-up(md) {
     &:hover {
-      color: $gray10;
+      //color: $gray10;
       text-decoration: none;
     }
   }
@@ -40,7 +40,7 @@ input, button, [role="button"] {
   }
 
   &::placeholder {
-    color: $gray9;
+    // color: $gray9;
   }
 }
 

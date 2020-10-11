@@ -1,15 +1,40 @@
 {% macro authBg(bg) %}
-
   <div class="auth__bg">
 
     <div class="auth__bg-logo auth__bg-logo--{{ bg.logo.position }}">
       <img class="auth__bg-logo-image" src="/static/img/stub/{{ bg.logo.image }}.png" alt="">
     </div>
 
-    <div style="color: white" class="auth__bg-label auth__bg-label--{{ bg.title.position }}">{{ bg.title.label }}</div>
+    <div style="color: #F7F7F7"
+         class="auth__bg-label auth__bg-label--{{ bg.title.position }}">{{ bg.title.label }}</div>
 
     <img class="auth__bg-image" loading="lazy" src="/static/img/auth/{{ bg.image }}" alt="">
 
+  </div>
+{% endmacro %}
+
+{% macro authInput(class, input) %}
+
+  <div class="{{ class }}-group input-auth">
+    <label class="input-auth__placeholder" for="{{ input.id }}">{{ input.placeholder }}</label>
+    <input class="input-auth__body"  type="{{ input.type }}" id="{{ input.id }}" autocomplete="{{ input.id }}">
+
+    {% if input.type === 'password' %}
+      <div class="input-auth__eye">
+        <svg class="icon icon-eye-close">
+          <use xlink:href="#icon-eye-close"></use>
+        </svg>
+      </div>
+    {% endif %}
+  </div>
+
+{% endmacro %}
+
+{% macro authCheckbox(class, label, id) %}
+
+  <div class="{{ class }}-checkbox checkbox-auth">
+    <input type="checkbox" class="checkbox-auth__body" id="{{ id }}">
+    <label for="{{ id }}" class="checkbox-auth__label">{{ label }}</label>
   </div>
 
 {% endmacro %}

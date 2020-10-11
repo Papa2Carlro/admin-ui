@@ -1,6 +1,9 @@
 import '../styles/index.scss';
 
-class App {
+// Form
+import FormInput from "./ui/FormInput"
+
+class Ui {
   constructor({el}) {
     this.el = el
     this.body = document.body;
@@ -14,8 +17,18 @@ class App {
   }
 
   initLoad() {
+    this.initAuthForm()
+  }
 
+  initAuthForm() {
+    const inputs = this.el.querySelectorAll('.input-auth')
+
+    if (inputs) {
+      inputs.forEach(input => {
+        new FormInput(this.el, input).init()
+      })
+    }
   }
 }
 
-window.App = new App({el: document.getElementById('app')});
+window.Ui = new Ui({el: document.getElementById('app')});
