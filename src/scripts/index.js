@@ -9,15 +9,18 @@ class Ui {
     this.body = document.body;
     this.vW = window.innerWidth;
     this.vH = window.innerHeight;
-    this.elClassList = this.el.classList;
     this.scrollPos = window.pageYOffset || window.scrollY;
+    this.aside = this.el.querySelector('.aside')
     this.header = this.el.querySelector('.header');
+
+    this.burger = this.el.querySelector('.js-burger')
 
     window.addEventListener('load', () => this.initLoad())
   }
 
   initLoad() {
     this.initAuthForm()
+    this.initBurger()
   }
 
   initAuthForm() {
@@ -25,7 +28,24 @@ class Ui {
 
     if (inputs) {
       inputs.forEach(input => {
-        new FormInput(this.el, input).init()
+        new FormInput(input, 'input-auth').init()
+      })
+    }
+  }
+
+  initBurger() {
+    if (this.burger) {
+      this.burger.addEventListener('click', () => {
+        if (!this.aside.classList.contains('isClose')) {
+          this.aside.classList.add('isClose')
+        } else {
+          this.aside.classList.add('progress')
+
+          setTimeout(() => {
+            this.aside.classList.remove('progress')
+            this.aside.classList.remove('isClose')
+          }, 400)
+        }
       })
     }
   }

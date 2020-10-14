@@ -1,3 +1,15 @@
 .link {
+  color: currentColor;
 
+  transition: color $transTimeSuperFast $easeInOut;
+
+  &:hover {
+    color: $gray2;
+  }
+
+  &--gray {
+    &:hover {
+      color: $gray4;
+    }
+  }
 }

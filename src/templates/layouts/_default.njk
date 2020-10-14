@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>Shop | {{ title }}</title>
+  <title>Admin | {{ title }}</title>
   <link rel="shortcut icon" href="/static/favicon.png" type="image/x-icon">
   <meta name="title" content="">
   <meta name="description" content="">
@@ -32,6 +32,8 @@
       opacity: 0;
     }
   </style>
+
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 </head>
 <body>
 <div id="app" class="app {{ app_class }}">
@@ -41,12 +43,20 @@
       {% include "includes/_icons-sprite.njk" %}
     </div>
 
-    {% include "includes/_header.njk" %}
+    <div class="admin">
 
-    {% block content %}
-    {% endblock %}
+      {% include "includes/_aside.njk" %}
 
-    {% include "includes/_footer.njk" %}
+      <div class="admin__body">
+
+        {% include "includes/_header.njk" %}
+
+        {% block content %}
+        {% endblock %}
+
+      </div>
+
+    </div>
 
   </div>
 </div>

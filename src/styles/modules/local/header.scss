@@ -1,0 +1,12 @@
+.header {
+  $height: 55px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  height: $height;
+  background: $white3;
+
+  box-shadow: 3px 3px 8px 0 rgba($black, 0.15);
+}

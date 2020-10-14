@@ -4,6 +4,7 @@ $gray1: #333333;
 $gray2: #4F4F4F;
 $gray3: #828282;
 $gray4: #BDBDBD;
+$gray5: #cccccc;
 
 $grays: ();
 $grays: map-merge(
@@ -11,7 +12,8 @@ $grays: map-merge(
       "1": $gray1,
       "2": $gray2,
       "3": $gray3,
-      "4": $gray4
+      "4": $gray4,
+      "5": $gray5
     ),
     $grays
 );
@@ -29,5 +31,24 @@ $purples: map-merge(
     $purples
 );
 
+//Blue
+$blue1: #1b2133;
+$blue2: #0c1224;
+
+$blues: ();
+$blues: map-merge(
+    (
+      '1': $blue1,
+      '2': $blue2
+    ),
+    $blues
+);
+
 // White
 $white1: #F7F7F7;
+$white2: #e4ebf7;
+$white3: #f2f6fc;
+$white4: #ebebeb;
+
+// red
+$red1: #f45b63;

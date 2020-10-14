@@ -1,9 +1,8 @@
 export default class FormInput {
-  constructor(el, input) {
-    this.el = el
+  constructor(input, baseClass) {
     this.input = input
 
-    this.baseClass = 'input-auth'
+    this.baseClass = baseClass
 
     this.inputBody = this.input.querySelector(`.${this.baseClass}__body`)
     this.placeholder = this.input.querySelector(`.${this.baseClass}__placeholder`)

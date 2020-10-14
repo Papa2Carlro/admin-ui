@@ -1,0 +1,52 @@
+{% import "components/_index.njk" as components %}
+{% import "database/_global.njk" as global %}
+
+<div class="admin__aside aside">
+
+  <div class="aside__header">
+    <a href="#" class="aside__header-logo">
+      <img src="/static/img/stub/Logotype.png" loading="lazy" alt="">
+    </a>
+
+    <div class="js-burger aside__header-burger">
+      <img src="/static/img/stub/Icon_Menu.png" loading="lazy" alt="">
+    </div>
+  </div>
+
+  <div class="aside__user">
+
+    <a href="#" class="aside__user-avatar">
+      <img src="/static/img/stub/avatar.png" loading="lazy" alt="">
+    </a>
+
+    <div class="aside__user-name">
+      Sheriff <br> Woody
+    </div>
+  </div>
+
+  <nav class="aside__menu menu">
+    <ul class="menu__list">
+      {% for menu in global.menus %}
+        <li class="menu__list-item">
+          <a href="{{ menu.link }}"
+            class="link link--gray menu__list-link
+                   {% if menu.list %}
+                   menu__list-hasSupList
+                   {% endif %}
+                   {% if menu.isActive %}
+                   menu__list-link--active
+                   {% endif %}
+                   ">
+            <i class="material-icons">{{ menu.icon }}</i>
+            <span class="menu__list-label">{{ menu.label }}</span>
+          </a>
+
+          {% if menu.list %}
+
+          {% endif %}
+        </li>
+      {% endfor %}
+    </ul>
+  </nav>
+
+</div>

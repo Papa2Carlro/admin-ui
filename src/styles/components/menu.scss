@@ -1,0 +1,28 @@
+.menu {
+  $parent: &;
+  color: $white2;
+
+  padding: map-get($spacers, 10) 0 0;
+
+  &__list {
+    @include list-unstyled;
+
+    &-label {
+      padding: 0 0 0 map-get($spacers, 15);
+    }
+
+    &-link {
+      display: flex;
+      align-items: center;
+
+      padding: map-get($spacers, 10) map-get($spacers, 15);
+
+      border-left: 4px solid transparent;
+
+      &--active {
+        border-color: $red1;
+        background-color: map-get($blues, '2');
+      }
+    }
+  }
+}
