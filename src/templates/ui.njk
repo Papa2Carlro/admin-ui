@@ -8,7 +8,61 @@
 
   <main class="layout" role="main">
     <section class="section py-25">
-      <div class="container">
+      <div class="container-fluid">
+        <div class="row">
+          <div class="col">
+            <div class="section__label">
+              <h2 class="h1">
+                Form UI
+              </h2>
+            </div>
+          </div>
+        </div>
+        <div class="row pt-15">
+          <div class="col">
+            .input.input--text
+            {{ components.inputText({
+              id: 'id1',
+              label: 'Label',
+              placeholder: 'placeholder',
+              description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Enim esse itaque molestiae officia possimus praesentium, qui rerum tempore. Atque blanditiis cum delectus facilis fugiat, ipsum magnam maiores natus quo rem!'
+            }, 'pt-15') }}
+          </div>
+        </div>
+        <div class="row pt-15">
+          <div class="col">
+            .input.input--textarea
+            {{ components.textarea({
+              id: 'id2',
+              label: 'Label',
+              placeholder: 'placeholder'
+            }, 'pt-15') }}
+          </div>
+        </div>
+        <div class="row pt-15">
+          <div class="col">
+            .checkbox
+            {{ components.checkbox({
+              id: 'id3',
+              title: 'Label',
+              label: 'Text'
+            }, 'pt-15') }}
+          </div>
+        </div>
+        <div class="row pt-15">
+          <div class="col">
+            .radio
+            {{ components.radio({
+              id: 'id4',
+              title: 'Label',
+              label: 'Text'
+            }, 'pt-15') }}
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="section py-25">
+      <div class="container-fluid">
         <div class="row mb-20">
           <div class="col">
             <div class="section__label">
@@ -19,7 +73,7 @@
           </div>
         </div>
         <div class="row mb-4">
-          <div class="col-18">
+          <div class="col-12">
             <div class="bg-dark text-white p-15">
               1/1
             </div>
@@ -28,59 +82,32 @@
         <div class="row mb-4">
           <div class="col-4">
             <div class="bg-dark text-white p-15">
-              4/18
+              4/12
             </div>
           </div>
-          <div class="col-4">
+          <div class="col-2">
             <div class="bg-dark text-white p-15">
-              4/18
-            </div>
-          </div>
-          <div class="col-4">
-            <div class="bg-dark text-white p-15">
-              4/18
+              2/12
             </div>
           </div>
           <div class="col-6">
             <div class="bg-dark text-white p-15">
-              6/18
+              6/12
             </div>
           </div>
         </div>
         <div class="row mb-4">
           <div class="col-3">
-            <div class="bg-dark text-white p-15">3/18</div>
+            <div class="bg-dark text-white p-15">3/12</div>
           </div>
-          <div class="col-3">
-            <div class="bg-dark text-white p-15">3/18</div>
+          <div class="col-2">
+            <div class="bg-dark text-white p-15">2/12</div>
           </div>
-          <div class="col-3">
-            <div class="bg-dark text-white p-15">3/18</div>
+          <div class="col-5">
+            <div class="bg-dark text-white p-15">5/12</div>
           </div>
-          <div class="col-3">
-            <div class="bg-dark text-white p-15">3/18</div>
-          </div>
-          <div class="col-6">
-            <div class="bg-dark text-white p-15">6/18</div>
-          </div>
-        </div>
-        <div class="row mb-4">
-          <div class="col-4">
-            <div class="bg-dark text-white px-15 py-50 mb-4">1</div>
-            <div class="bg-dark text-white p-15 mb-4">2</div>
-          </div>
-          <div class="col-4">
-            <div class="bg-dark text-white p-15 mb-4">3</div>
-            <div class="bg-dark text-white p-15 mb-4">4</div>
-            <div class="bg-dark text-white p-15 mb-4">5</div>
-          </div>
-          <div class="col-4">
-            <div class="bg-dark text-white p-15 mb-4">6</div>
-            <div class="bg-dark text-white p-15 mb-4">7</div>
-            <div class="bg-dark text-white p-15 mb-4">8</div>
-          </div>
-          <div class="col-6">
-            <div class="bg-dark text-white px-15 py-80 mb-4">9</div>
+          <div class="col-2">
+            <div class="bg-dark text-white p-15">2/12</div>
           </div>
         </div>
         <div class="row row-cols-5">
@@ -103,38 +130,34 @@
       </div>
     </section>
     <section class="section py-25">
-      <div class="container">
+      <div class="container-fluid">
         <div class="row mb-20">
           <div class="col">
             <div class="section__label">
               <h2 class="h1">
-                Spacing
+                Links
               </h2>
             </div>
           </div>
         </div>
-        <div class="row mb-4">
-          <div class="col">
-            <span class="bg-dark text-white py-8 pr-4 mr-8"></span>
-            <span class="bg-dark text-white py-8 pr-8 mr-8"></span>
-            <span class="bg-dark text-white py-8 pr-10 mr-8"></span>
-            <span class="bg-dark text-white py-8 pr-15 mr-8"></span>
-            <span class="bg-dark text-white py-8 pr-20 mr-8"></span>
-            <span class="bg-dark text-white py-8 pr-25 mr-8"></span>
-            <span class="bg-dark text-white py-8 pr-30 mr-8"></span>
-            <span class="bg-dark text-white py-8 pr-40 mr-8"></span>
-            <span class="bg-dark text-white py-8 pr-50 mr-8"></span>
-            <span class="bg-dark text-white py-8 pr-70 mr-8"></span>
-            <span class="bg-dark text-white py-8 pr-80 mr-8"></span>
-            <span class="bg-dark text-white py-8 pr-100 mr-8"></span>
-            <span class="bg-dark text-white py-8 pr-120 mr-8"></span>
-            <span class="bg-dark text-white py-8 pr-150 mr-8"></span>
+        <div class="row mb-4 bg-gray">
+          <div class="col-12 pb-10">
+            <div>.link</div>
+            <a href="" class="link">
+              by Jeff Dickerson
+            </a>
+          </div>
+          <div class="col-12 pb-10">
+            <div>.link.link--default</div>
+            <a href="" class="link link--default">
+              by Jeff Dickerson
+            </a>
           </div>
         </div>
       </div>
     </section>
     <section class="section py-25">
-      <div class="container">
+      <div class="container-fluid">
         <div class="row mb-20">
           <div class="col">
             <div class="section__label">
@@ -161,65 +184,6 @@
                 </div>
               </div>
             </div>
-          </div>
-        </div>
-      </div>
-    </section>
-    <section class="section py-25">
-      <div class="container">
-        <div class="row mb-20">
-          <div class="col">
-            <div class="section__label">
-              <h2 class="h1">
-                Typography
-              </h2>
-            </div>
-          </div>
-        </div>
-        <div class="row mb-4">
-          <div class="col">
-            <h1 class="test-title-s400-10">
-              Test title with mixin font-size s400-10
-            </h1>
-            <h2 class="test-title-s500-9">
-              Test title with mixin font-size s500-9
-            </h2>
-            <h3 class="test-title-s700-7">
-              Test title with mixin font-size s700-7
-            </h3>
-          </div>
-        </div>
-      </div>
-    </section>
-    <section class="section py-25">
-      <div class="container">
-        <div class="row mb-20">
-          <div class="col">
-            <div class="section__label">
-              <h2 class="h1">
-                Links
-              </h2>
-            </div>
-          </div>
-        </div>
-        <div class="row mb-4 bg-gray">
-          <div class="col-12 pb-10">
-            <div>.link</div>
-            <a href="" class="link">
-              by Jeff Dickerson
-            </a>
-          </div>
-          <div class="col-12 pb-10">
-            <div>.link--gray</div>
-            <a href="" class="link link--grey">
-              by Jeff Dickerson
-            </a>
-          </div>
-          <div class="col-12 pb-10">
-            <div>.link--white</div>
-            <a href="" class="link link--white">
-              by Jeff Dickerson
-            </a>
           </div>
         </div>
       </div>

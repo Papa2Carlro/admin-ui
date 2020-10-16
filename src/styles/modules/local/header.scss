@@ -1,12 +1,136 @@
 .header {
-  $height: 55px;
 
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
+  &__body {
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    box-shadow: 0 1px 4px rgba(0, 21, 41, 0.08);
 
-  height: $height;
-  background: $white3;
+    background: $white3;
 
-  box-shadow: 3px 3px 8px 0 rgba($black, 0.15);
+    position: relative;
+    z-index: 10;
+
+    padding: 0 map-get($spacers, 20);
+  }
+
+  &__pages {
+    background: $white3;
+    box-shadow: 0 1px 3px rgba($black, 0.04);
+
+    border-top: 1px solid $white6;
+
+    display: flex;
+    align-items: center;
+
+    padding: 1px map-get($spacers, 10);
+
+    &-list {
+      @include list-unstyled;
+
+      display: flex;
+      flex-wrap: wrap;
+
+      .chip {
+        $height: 26px;
+        height: $height;
+        cursor: pointer;
+
+        position: relative;
+
+        color: $gray2;
+        line-height: $height;
+        background: transparent;
+        border: 1px solid $gray3;
+
+        margin: 3px 0;
+        padding: 0 map-get($spacers, 10) 0 map-get($spacers, 15);
+
+        .material-icons {
+          font-size: 14px;
+
+          line-height: 19px;
+
+          width: 20px;
+          height: 18px;
+
+          display: flex;
+          align-items: center;
+          justify-content: center;
+
+          margin-left: 5px;
+          padding-left: 0;
+          border-radius: 50%;
+
+          transition: background $transTimeSuperFast $easeInOut, color $transTimeSuperFast $easeInOut;
+
+          &:hover {
+            color: $white1;
+            background: $gray5;
+          }
+        }
+      }
+    }
+
+    &-item {
+      display: flex;
+      align-items: center;
+
+      &.isActive {
+        &.chip {
+          color: $white1;
+          background: $green1;
+
+          border: none;
+
+          &:before {
+            content: '';
+
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background: $white;
+
+            position: absolute;
+            top: 9px;
+            left: 5px;
+
+            display: flex;
+            align-items: center;
+          }
+        }
+      }
+
+      margin-right: map-get($spacers, 10) !important;
+    }
+  }
+
+  &__action {
+    &-btn {
+      .btn {
+
+        background-color: $darken-1;
+
+        &:hover {
+          color: $gray2;
+          background-color: $lighten-2;
+        }
+      }
+    }
+
+    &-list {
+      li {
+        min-height: 32px;
+
+        & > a {
+          padding: 5px 16px;
+        }
+      }
+
+      .divider {
+        margin-top: map-get($spacers, 5);
+      }
+    }
+  }
 }

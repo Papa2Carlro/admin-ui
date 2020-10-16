@@ -17,7 +17,7 @@
 
   <div class="{{ class }}-group input-auth">
     <label class="input-auth__placeholder" for="{{ input.id }}">{{ input.placeholder }}</label>
-    <input class="input-auth__body"  type="{{ input.type }}" id="{{ input.id }}" autocomplete="{{ input.id }}">
+    <input class="input-auth__body" type="{{ input.type }}" id="{{ input.id }}" autocomplete="{{ input.id }}">
 
     {% if input.type === 'password' %}
       <div class="input-auth__eye">
@@ -32,9 +32,118 @@
 
 {% macro authCheckbox(class, label, id) %}
 
-  <div class="{{ class }}-checkbox checkbox-auth">
-    <input type="checkbox" class="checkbox-auth__body" id="{{ id }}">
-    <label for="{{ id }}" class="checkbox-auth__label">{{ label }}</label>
+  <div class="{{ class }}-checkbox checkbox">
+    <input type="checkbox" class="checkbox__body" id="{{ id }}">
+    <label for="{{ id }}" class="checkbox__label">{{ label }}</label>
+  </div>
+
+{% endmacro %}
+
+{% macro inputText(input, class) %}
+
+  <div class="row input input--text {{ class }}">
+    <div class="col-12">
+      <label class="input__label" for="{{ input.id }}">{{ input.label }}</label>
+    </div>
+
+    <div class="col-12 col-lg-5">
+      <input class="input__body" type="text" id="{{ input.id }}" placeholder="{{ input.placeholder }}">
+    </div>
+
+    {% if input.description %}
+      <div class="col-12">
+        <div class="input__description">{{ input.description }}</div>
+      </div>
+    {% endif %}
+
+  </div>
+
+{% endmacro %}
+
+{% macro textarea(input, class) %}
+
+  <div class="row input input--textarea {{ class }}">
+    <div class="col-12">
+      <label class="input__label" for="{{ input.id }}">{{ input.label }}</label>
+    </div>
+
+    <div class="col-12 col-lg-5">
+      <textarea class="input__body" id="{{ input.id }}" placeholder="{{ input.placeholder }}"></textarea>
+    </div>
+
+    {% if input.description %}
+      <div class="col-12">
+        <div class="input__description">{{ input.description }}</div>
+      </div>
+    {% endif %}
+
+  </div>
+
+{% endmacro %}
+
+{% macro checkbox(input, class) %}
+
+  <div class="row {{ class }}">
+    <div class="col-12">
+      <div class="checkbox__title">{{ input.title }}</div>
+    </div>
+
+    <div class="col-12">
+      <div class="checkbox">
+        <input class="checkbox__body" type="checkbox" id="{{ input.id }}">
+        <label class="checkbox__label checkbox__label--dark" for="{{ input.id }}">{{ input.label }}</label>
+      </div>
+    </div>
+
+    {% if input.description %}
+      <div class="col-12">
+        <div class="input__description">{{ input.description }}</div>
+      </div>
+    {% endif %}
+
+  </div>
+
+{% endmacro %}
+
+{% macro radio(input, class) %}
+
+  <div class="row {{ class }}">
+    <div class="col-12">
+      <div class="checkbox__title">{{ input.title }}</div>
+    </div>
+
+    <div class="col-12">
+      <div class="radio">
+        <input class="radio__body" type="checkbox" id="{{ input.id }}">
+        <label class="radio__label" for="{{ input.id }}">{{ input.label }}</label>
+      </div>
+    </div>
+
+    {% if input.description %}
+      <div class="col-12">
+        <div class="input__description">{{ input.description }}</div>
+      </div>
+    {% endif %}
+
+  </div>
+
+{% endmacro %}
+
+
+{% macro breadcrumb(array) %}
+
+  <div class="breadcrumb">
+    <ul class="breadcrumb__list">
+      {% for item in array %}
+        <li class="breadcrumb__item">
+          {% if array.length === loop.index %}
+            {{ item.label }}
+          {% else %}
+            <a class="breadcrumb__item-link link" href="{{ item.link }}">{{ item.label }}</a>
+          {% endif %}
+        </li>
+      {% endfor %}
+    </ul>
   </div>
 
 {% endmacro %}

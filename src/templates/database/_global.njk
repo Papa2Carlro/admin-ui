@@ -6,16 +6,73 @@
     isActive: true
   },
   {
+    icon: 'wallpaper',
+    label: 'Images',
+    link: '#',
+    isActive: false
+  },
+  {
+    icon: 'account_circle',
+    label: 'Users',
+    link: '#',
+    isActive: false,
+    lists: [
+    {
+      label: 'All Users',
+      isActive: true,
+      link: '#'
+    },
+    {
+      label: 'Add new User',
+      isActive: false,
+      link: '#'
+    },
+    {
+      label: 'You profile',
+      isActive: false,
+      link: '#'
+    }
+  ]
+  },
+  {
     icon: 'settings',
     label: 'Settings',
     link: '#',
     isActive: false,
-    isOpen: false,
-    list: [
+    lists: [
     {
       label: 'Auth Setting',
+      isActive: false,
       link: '#'
     }
   ]
+  },
+  {
+    icon: 'memory',
+    label: 'Ui Element',
+    link: '/test.html',
+    isActive: false
+  }
+] %}
+{% set chips = [
+  {
+    label: 'Dashboard',
+    isActive: true,
+    isClose: false
+  },
+  {
+    label: 'Images',
+    isActive: false,
+    isClose: true
+  },
+  {
+    label: 'Users',
+    isActive: false,
+    isClose: true
+  },
+  {
+    label: 'Settings',
+    isActive: false,
+    isClose: true
   }
 ] %}

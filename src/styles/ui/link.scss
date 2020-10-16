@@ -12,4 +12,10 @@
       color: $gray4;
     }
   }
+
+  &--default {
+    &:hover {
+      color: currentColor;
+    }
+  }
 }

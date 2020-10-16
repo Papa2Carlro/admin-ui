@@ -1,6 +1,9 @@
 .aside {
   $parent: &;
 
+  display: flex;
+  flex-direction: column;
+
   &__header {
     display: flex;
     align-items: center;
@@ -8,7 +11,7 @@
 
     padding: map-get($spacers, 15) map-get($spacers, 10);
 
-    border-bottom: 1px solid map-get($blues, '2');
+    //border-bottom: 1px solid map-get($blues, '2');
 
     &-burger {
       width: 25px;
@@ -26,7 +29,7 @@
 
     padding: map-get($spacers, 10) map-get($spacers, 5);
 
-    border-bottom: 1px solid map-get($blues, '2');
+    //border-bottom: 1px solid map-get($blues, '2');
 
     &-avatar {
       width: 50px;
@@ -47,6 +50,15 @@
     }
   }
 
+  &__footer {
+    margin-top: auto;
+
+    @include s400-5;
+
+    padding: 0 0 map-get($spacers, 10) map-get($spacers, 15);
+
+    color: $gray5;
+  }
 
   &.isClose {
     #{$parent} {
@@ -63,9 +75,17 @@
           display: none;
         }
       }
+
+      &__footer {
+        display: none;
+      }
     }
 
     .menu__list-label {
+      display: none;
+    }
+
+    .menu__dropMenu {
       display: none;
     }
   }

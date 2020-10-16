@@ -1,4 +1,4 @@
-.checkbox-auth {
+.checkbox {
   $parent: &;
 
   position: relative;
@@ -10,7 +10,6 @@
 
     &:checked + #{$parent}__label:before {
       opacity: 1;
-
     }
   }
 
@@ -29,6 +28,10 @@
     padding: 0 0 0 map-get($spacers, 25);
 
     user-select: none;
+
+    &--dark {
+      color: $gray1;
+    }
 
     &:after {
       content: '';

@@ -12,23 +12,18 @@
   }
 }
 
-.layout {
-  overflow-y: auto;
-  height: calc(100% - 55px);
-
-  padding: 0 5px 0 0;
-}
-
 // ScrollBar
 
 /* width */
 ::-webkit-scrollbar {
-  width: 10px;
+  width: 7px;
+  height: 100%;
 }
 
 /* Track */
 ::-webkit-scrollbar-track {
   background: transparent;
+  margin: 5px 0;
 }
 
 /* Handle */
@@ -36,3 +31,15 @@
   background: $gray4;
   border-radius: 10px;
 }
+
+
+input::-webkit-input-placeholder       {text-indent: 0px;   transition: text-indent 0.3s ease;}
+input::-moz-placeholder                {text-indent: 0px;   transition: text-indent 0.3s ease;}
+input:-moz-placeholder                 {text-indent: 0px;   transition: text-indent 0.3s ease;}
+input:-ms-input-placeholder            {text-indent: 0px;   transition: text-indent 0.3s ease;}
+input:focus::-webkit-input-placeholder {text-indent: 500px; transition: text-indent 0.3s ease;}
+input:focus::-moz-placeholder          {text-indent: 500px; transition: text-indent 0.3s ease;}
+input:focus:-moz-placeholder           {text-indent: 500px; transition: text-indent 0.3s ease;}
+input:focus:-ms-input-placeholder      {text-indent: 500px; transition: text-indent 0.3s ease;}
+
+// </Input>

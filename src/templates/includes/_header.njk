@@ -1,9 +1,86 @@
+{% import "components/_index.njk" as components %}
+{% import "database/_global.njk" as global %}
+
+{% set breadcrumb = [
+  {
+    label: 'Dashboard',
+    link: '#'
+  },
+  {
+    label: 'Users',
+    link: '#'
+  },
+  {
+    label: 'All Users'
+  }
+] %}
+
+{% set mainBtn = [
+  {
+    label: 'Profile',
+    link: '#'
+  },
+  {
+    label: 'Dashboard',
+    link: '#'
+  },
+  {
+    label: 'Github',
+    link: '#'
+  },
+  {
+    label: 'Docs',
+    link: '#'
+  },
+  {
+    label: 'divider'
+  },
+  {
+    label: 'Log Out',
+    link: '#'
+  }
+] %}
+
 <div class="header">
 
-  <div class="header__search"></div>
+  <div class="header__body">
+    <div class="header__breadcrumb">
+      {{ components.breadcrumb(breadcrumb) }}
+    </div>
 
-  <div class="header__action">
+    <div class="header__action">
 
+      <div class="header__action-btn">
+        <a class='dropdown-button btn link--default' href='#' data-activates='dropdown1'>Woody</a>
+
+        <ul id='dropdown1' class='dropdown-content header__action-list'>
+          {% for item in mainBtn %}
+            {% if item.label === 'divider' %}
+              <li class="divider"></li>
+            {% else %}
+              <li><a href="{{ item.link }}">{{ item.label }}</a></li>
+            {% endif %}
+          {% endfor %}
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <div class="header__pages">
+    <ul class="header__pages-list">
+      {% for chip in global.chips %}
+        <div class="chip header__pages-item
+                    {% if chip.isActive %}
+                    isActive
+                    {% endif %}">
+          {{ chip.label }}
+          {% if chip.isClose %}
+            <i class="close material-icons">close</i>
+          {% endif %}
+        </div>
+      {% endfor %}
+      <li></li>
+    </ul>
   </div>
 
 </div>

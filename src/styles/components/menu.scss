@@ -2,12 +2,116 @@
   $parent: &;
   color: $white2;
 
+  height: 100%;
+  box-shadow: none;
   padding: map-get($spacers, 10) 0 0;
 
+  &__dropMenu {
+    $drop: &;
+
+    @include list-unstyled;
+    background: map-get($blues, '3');
+
+    display: flex;
+    flex-direction: column;
+
+    &-item {
+      @include s400-6;
+
+      color: $white;
+      line-height: 100%;
+      padding: map-get($spacers, 5) map-get($spacers, 25);
+
+      &.isActive {
+        font-weight: bold;
+      }
+
+      .link {
+        &:hover {
+          background: transparent;
+        }
+      }
+    }
+
+    &--hidden {
+      top: 0;
+      left: 100%;
+      z-index: 10;
+      position: absolute;
+
+      padding: map-get($spacers, 10) 0;
+      width: max-content;
+      background: map-get($blues, '3');
+
+      border-radius: 1px;
+      box-shadow: -7px 6px 13px rgba($black, .3);
+
+      display: none;
+
+      #{$drop} {
+        &-item {
+          padding: 5px 40px 5px 10px;
+
+          &.isActive {
+            font-weight: normal;
+          }
+        }
+      }
+    }
+  }
+
   &__list {
+    $list: &;
     @include list-unstyled;
 
+    &-icon {
+      user-select: none;
+    }
+
+    &-hasSupList {
+      &:after{
+        content: '';
+
+        right: 0;
+        border: solid 8px transparent;
+        height: 0;
+        width: 0;
+        position: absolute;
+        pointer-events: none;
+        top: 50%;
+        margin-top: -8px;
+
+        z-index: 100;
+      }
+
+      &:hover {
+        &:after{
+          border-right-color: map-get($blues, '3');
+        }
+
+        #{$parent} {
+          &__dropMenu {
+            &--hidden {
+              display: flex;
+            }
+          }
+        }
+      }
+    }
+
+    &-item {
+      position: relative;
+      display: block;
+      width: 100%;
+    }
+
+    &-icon {
+      height: 24px !important;
+      line-height: 24px !important;
+    }
+
     &-label {
+      line-height: 100%;
       padding: 0 0 0 map-get($spacers, 15);
     }
 
@@ -19,9 +123,24 @@
 
       border-left: 4px solid transparent;
 
-      &--active {
+      transition: all $transTimeSuperFast $easeInOut;
+
+      &:hover {
+        border-width: 2px;
         border-color: $red1;
-        background-color: map-get($blues, '2');
+
+        padding: 10px 17px;
+
+        background-color: rgba(map-get($blues, '2'), .5);
+      }
+
+      &--active {
+        border-width: 4px !important;
+        border-color: $red1 !important;
+
+        padding: 10px 15px !important;
+
+        background-color: map-get($blues, '2') !important;
       }
     }
   }

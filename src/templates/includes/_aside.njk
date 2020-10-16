@@ -27,26 +27,45 @@
   <nav class="aside__menu menu">
     <ul class="menu__list">
       {% for menu in global.menus %}
-        <li class="menu__list-item">
-          <a href="{{ menu.link }}"
-            class="link link--gray menu__list-link
-                   {% if menu.list %}
+        <li class="menu__list-item
+                   {% if menu.lists %}
                    menu__list-hasSupList
                    {% endif %}
+                    ">
+          <a href="{{ menu.link }}"
+             class="link link--default menu__list-link
                    {% if menu.isActive %}
                    menu__list-link--active
                    {% endif %}
                    ">
-            <i class="material-icons">{{ menu.icon }}</i>
+            <i class="material-icons menu__list-icon">{{ menu.icon }}</i>
             <span class="menu__list-label">{{ menu.label }}</span>
           </a>
 
-          {% if menu.list %}
-
+          {% if menu.lists %}
+            <ul class="menu__dropMenu
+                {% if menu.isActive %}
+                {% else %}
+                menu__dropMenu--hidden
+                {% endif %}
+              ">
+              {% for list in menu.lists %}
+                <li class="menu__dropMenu-item
+                           {% if list.isActive  %}
+                           isActive
+                           {% endif %}">
+                  <a class="link link--default" href="{{ list.link }}">{{ list.label }}</a>
+                </li>
+              {% endfor %}
+            </ul>
           {% endif %}
         </li>
       {% endfor %}
     </ul>
   </nav>
+
+  <div class="aside__footer">
+    © 2020 Max Priymak
+  </div>
 
 </div>
