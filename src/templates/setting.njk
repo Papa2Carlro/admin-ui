@@ -1,0 +1,63 @@
+{% set title = "Setting" %}
+{% set app_class = "app--admin" %}
+
+{% extends "layouts/_default.njk" %}
+{% import "components/_index.njk" as components %}
+
+{% block content %}
+
+  <main class="main" role="main">
+
+    <section class="section py-10">
+      <div class="container-fluid">
+        <div class="row">
+          <div class="col">
+            <div class="section__header">
+              <h1 class="section__label">Settings</h1>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container-fluid">
+        <div class="row">
+          <div class="col-12">
+            <ul class="collapsible" data-collapsible="accordion">
+              <li>
+                <div class="collapsible-header active">
+                  <div class="collapsible-header__label">General Setting</div>
+                  {{ components.actions('') }}
+                </div>
+                <div class="collapsible-body">
+                  {% include "setting/general.njk" %}
+                </div>
+              </li>
+              <li>
+                <div class="collapsible-header">
+                  <div class="collapsible-header__label">Menu Setting</div>
+                  {{ components.actions('') }}
+                </div>
+                <div class="collapsible-body">
+                  {% include "setting/menu.njk" %}
+                </div>
+              </li>
+              <li>
+                <div class="collapsible-header">
+                  <div class="collapsible-header__label">Auth Setting</div>
+                  {{ components.actions('') }}</div>
+                <div class="collapsible-body">
+                  {% include "setting/auth.njk" %}
+                </div>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+  </main>
+
+{% endblock %}

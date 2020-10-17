@@ -15,7 +15,7 @@
 
   <div class="aside__user">
 
-    <a href="#" class="aside__user-avatar">
+    <a href="/profile.html" class="aside__user-avatar">
       <img src="/static/img/stub/avatar.png" loading="lazy" alt="">
     </a>
 
@@ -51,7 +51,7 @@
               ">
               {% for list in menu.lists %}
                 <li class="menu__dropMenu-item
-                           {% if list.isActive  %}
+                           {% if list.isActive %}
                            isActive
                            {% endif %}">
                   <a class="link link--default" href="{{ list.link }}">{{ list.label }}</a>
@@ -65,7 +65,12 @@
   </nav>
 
   <div class="aside__footer">
-    © 2020 Max Priymak
+    © 2020
+    {% if global.version.mode === 'prod' %}
+      Max Priymak
+    {% else %}
+      v{{ global.version.version }}-{{ global.version.prefix }}
+    {% endif %}
   </div>
 
 </div>

@@ -1,0 +1,58 @@
+.section {
+
+  &__header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    margin: 0 map-get($spacers, 15)*-1 0;
+    padding: map-get($spacers, 5) map-get($spacers, 15) map-get($spacers, 15);
+
+    border-bottom: 1px solid $gray5;
+  }
+
+  &__label {
+    color: $gray1;
+
+    @include s400-13;
+  }
+
+  &__tools {
+    display: flex;
+    color: $white1;
+
+    &-back {
+      padding: 0 map-get($spacers, 10);
+
+      background-color: $indigo1;
+
+      &:hover {
+        color: currentColor;
+        background-color: $indigo2;
+      }
+    }
+
+    &-save {
+      padding: 0 map-get($spacers, 10) 0 map-get($spacers, 15);
+
+      &:hover {
+        color: currentColor;
+      }
+    }
+
+    &-item {
+      &.order-1 {
+        padding: 0 0 0 map-get($spacers, 5);
+      }
+
+      & + & {
+        padding: 0 0 0 map-get($spacers, 5);
+      }
+    }
+  }
+
+  &__actions {
+    padding: map-get($spacers, 40) 0 0;
+    float: right;
+  }
+}

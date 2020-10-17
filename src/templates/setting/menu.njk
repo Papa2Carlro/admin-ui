@@ -1,0 +1,44 @@
+{% import "components/_widgets.njk" as widget %}
+{% import "components/_form.njk" as form %}
+{% import "database/_global.njk" as global %}
+{% import "components/_index.njk" as components %}
+
+{% set options = {
+  name: 'site_type',
+  list: [
+    {
+      label: 'Shop',
+      id: 'shop'
+    },
+    {
+      label: 'Blog',
+      id: 'blog'
+    },
+    {
+      label: 'Lending',
+      id: 'lending'
+    }
+  ]
+} %}
+
+<form class="menu-setting">
+
+  <div class="menu-setting-body">
+    <div class="row">
+      <div class="col-12 col-lg-4">
+        <div class="widget">
+          <div class="widget__header">
+            <div class="widget__header-label">Menu</div>
+          </div>
+
+          <div class="widget__content">
+            <div class="widget__checkbox">
+              {{ form.checkbox('menu', global.menus) }}
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</form>

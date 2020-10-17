@@ -17,6 +17,14 @@ const routerConfig = [
     template: 'reset'
   },
   {
+    name: 'setting',
+    template: 'setting'
+  },
+  {
+    name: 'profile',
+    template: 'profile'
+  },
+  {
     name: 'test',
     template: 'ui'
   }

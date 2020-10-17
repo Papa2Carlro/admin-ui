@@ -5,16 +5,36 @@ nav {
     padding: 0;
   }
 }
+
 table {
-  &.highlight>tbody>tr {
+  &.highlight > tbody > tr {
     &:hover {
       background-color: $white1;
     }
   }
 
-  &.striped>tbody>tr {
+  &.striped > tbody > tr {
     &:nth-child(odd) {
       background-color: $white1;
     }
+  }
+}
+
+.caret {
+  display: none !important;
+}
+
+
+.tabs {
+  background: transparent !important;
+}
+
+.collapsible-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  .material-icons {
+    margin: 0;
   }
 }

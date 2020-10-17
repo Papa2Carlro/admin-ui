@@ -1,0 +1,37 @@
+{% macro image(src, id, label) %}
+  <div class="widget">
+    <div class="widget__header">
+      <div class="widget__header-label">{{ label }}</div>
+    </div>
+
+    <div class="widget__content widget__content--image">
+      <label for="{{ id }}" class="widget__image">
+        <img src="{{ src }}" loading="lazy" class="widget__image-body" alt="">
+      </label>
+
+      <div class="widget__upload">
+        <div class="file-field input-field">
+          <div class="btn">
+            <span>File</span>
+            <input id="{{ id }}" type="file" multiple>
+          </div>
+          <div class="file-path-wrapper">
+            <input class="file-path validate" type="text" placeholder="Upload one or more files">
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+{% endmacro %}
+
+{% macro css(placeholder) %}
+  <div class="widget">
+    <div class="widget__header">
+      <div class="widget__header-label">Custom Css</div>
+    </div>
+
+    <div class="widget__content widget__content--css">
+      <textarea placeholder="{{ placeholder }}" class="widget__textarea" id="custom_css"></textarea>
+    </div>
+  </div>
+{% endmacro %}

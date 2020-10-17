@@ -1,0 +1,83 @@
+{% set title = "Auth Setting" %}
+{% set app_class = "app--admin" %}
+
+{% extends "layouts/_default.njk" %}
+{% import "components/_index.njk" as components %}
+{% import "components/_widgets.njk" as widget %}
+{% import "components/_form.njk" as form %}
+
+{% set option = {
+  label: false,
+  placeholder: 'Main site language',
+  column: '',
+  list: [
+    {
+      label: 'ru-Ru',
+      value: 'ru-Ru'
+    },
+    {
+      label: 'en-En',
+      value: 'en-En'
+    }
+  ]
+} %}
+
+{% block content %}
+
+  <main class="main" role="main">
+
+    <section class="section py-10">
+      <div class="container-fluid">
+        <div class="row">
+          <div class="col">
+            <div class="section__header">
+              <h1 class="section__label">Profile</h1>
+
+              {{ components.actions('') }}
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container-fluid">
+        <div class="row">
+          <div class="col-12 col-lg-8">
+            <div class="widget">
+              <div class="widget__header">
+                <div class="widget__header-label">Setting</div>
+              </div>
+
+              <div class="widget__content">
+                <div class="widget__content-column">
+                  <div class="col-12 col-lg-6">
+                    {{ form.input('Name', 'firs_name') }}
+                    {{ form.input('Nickname', 'nickname') }}
+                    {{ form.select(option) }}
+                  </div>
+                  <div class="col-12 col-lg-6">
+                    {{ form.input('Surname', 'last_name') }}
+                    {{ form.input('Email *', 'email') }}
+                  </div>
+                  <div class="col-12">
+                    <h5 class="color-gray1">About me</h5>
+                    {{ form.textarea('Biography', 'biography', '') }}
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-12 col-lg-4">
+            {{ widget.image('/static/img/stub/avatar.png', 'avatar', 'Avatar') }}
+          </div>
+          <div class="row">
+
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+{% endblock %}

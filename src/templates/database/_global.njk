@@ -1,39 +1,58 @@
+{% set version = {
+  mode: 'dev',
+  version: '0.0.3',
+  prefix: 'alpha'
+} %}
+
 {% set menus = [
   {
     icon: 'dashboard',
     label: 'Dashboard',
     link: '#',
-    isActive: true
+    isActive: true,
+    visible: true
   },
   {
     icon: 'forum',
     label: 'Post',
     link: '#',
-    isActive: false
+    isActive: false,
+    visible: true
   },
   {
     icon: 'library_books',
     label: 'Catalog',
     link: '#',
-    isActive: false
+    isActive: false,
+    visible: true
+  },
+  {
+    icon: 'book',
+    label: 'Pages',
+    link: '#',
+    isActive: false,
+    visible: true
   },
   {
     icon: 'wallpaper',
     label: 'Images',
     link: '#',
-    isActive: false
+    isActive: false,
+    visible: true
   },
   {
     icon: 'extension',
     label: 'Plugins',
     link: '#',
-    isActive: false
+    isActive: false,
+    visible: true
   },
   {
     icon: 'account_circle',
     label: 'Users',
     link: '#',
     isActive: false,
+    visible: true,
     lists: [
     {
       label: 'All Users',
@@ -48,7 +67,7 @@
     {
       label: 'You profile',
       isActive: false,
-      link: '#'
+      link: '/profile.html'
     }
   ]
   },
@@ -56,26 +75,23 @@
     icon: 'comment',
     label: 'Comments',
     link: '#',
-    isActive: false
+    isActive: false,
+    visible: true
   },
   {
     icon: 'settings',
     label: 'System',
     link: '#',
     isActive: false,
+    visible: true,
     lists: [
     {
       label: 'Setting',
       isActive: false,
-      link: '#'
+      link: '/setting.html'
     },
     {
       label: 'Localization',
-      isActive: false,
-      link: '#'
-    },
-    {
-      label: 'Auth Setting',
       isActive: false,
       link: '#'
     }
@@ -85,7 +101,8 @@
     icon: 'memory',
     label: 'Ui Element',
     link: '/test.html',
-    isActive: false
+    isActive: false,
+    visible: true
   }
 ] %}
 {% set chips = [
@@ -113,7 +130,7 @@
 {% set mainBtn = [
   {
     label: 'Profile',
-    link: '#'
+    link: '/profile.html'
   },
   {
     label: 'Dashboard',
@@ -132,7 +149,7 @@
   },
   {
     label: 'Log Out',
-    link: '#'
+    link: '/auth/login.html'
   }
 ] %}
 {% set tools = [
@@ -163,6 +180,109 @@
     {
       label: 'http://my-site2.loc',
       link: 'http://my-site2.loc'
+    }
+  ]
+  }
+] %}
+{% set authSetting = [
+  {
+    label: false,
+    placeholder: 'Logo position',
+    column: 12,
+    list: [
+    {
+      label: 'Top left',
+      value: 'l_top_left'
+    },
+    {
+      label: 'Top center',
+      value: 'l_top_center'
+    },
+    {
+      label: 'Top right',
+      value: 'l_top_right'
+    },
+    {
+      label: 'Center left',
+      value: 'l_center_left'
+    },
+    {
+      label: 'Center center',
+      value: 'l_center_center'
+    },
+    {
+      label: 'Center right',
+      value: 'l_center_right'
+    },
+    {
+      label: 'Bottom left',
+      value: 'l_bottom_left'
+    },
+    {
+      label: 'Bottom center',
+      value: 'l_bottom_center'
+    },
+    {
+      label: 'Bottom right',
+      value: 'l_bottom_right'
+    }
+  ]
+  },
+  {
+    label: false,
+    placeholder: 'Text position',
+    column: 12,
+    list: [
+    {
+      label: 'Top left',
+      value: 't_top_left'
+    },
+    {
+      label: 'Top center',
+      value: 't_top_center'
+    },
+    {
+      label: 'Top right',
+      value: 't_top_right'
+    },
+    {
+      label: 'Center left',
+      value: 't_center_left'
+    },
+    {
+      label: 'Center center',
+      value: 't_center_center'
+    },
+    {
+      label: 'Center right',
+      value: 't_center_right'
+    },
+    {
+      label: 'Bottom left',
+      value: 't_bottom_left'
+    },
+    {
+      label: 'Bottom center',
+      value: 't_bottom_center'
+    },
+    {
+      label: 'Bottom right',
+      value: 't_bottom_right'
+    }
+  ]
+  },
+  {
+    label: false,
+    placeholder: 'Form position',
+    column: 12,
+    list: [
+    {
+      label: 'Image Form',
+      value: 'f_image_form'
+    },
+    {
+      label: 'Form Image',
+      value: 'f_form_image'
     }
   ]
   }

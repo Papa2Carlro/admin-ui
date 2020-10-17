@@ -1,0 +1,9 @@
+.general-setting {
+  &-body {
+    padding: map-get($spacers, 20) 0 0;
+
+    .select-wrapper {
+      color: $gray3;
+    }
+  }
+}

@@ -7,9 +7,21 @@
 
   overflow: hidden;
 
+  &--form-left {
+    grid-template-columns: 1fr 2fr;
+  }
+
   &__panel {
     display: flex;
     align-items: center;
+
+    &--left {
+      order: 1;
+    }
+
+    &--right {
+      order: 2;
+    }
   }
 
   &__form {
@@ -241,6 +253,14 @@
 
       width: 100%;
       height: 100%;
+    }
+
+    &--left {
+      order: 1;
+    }
+
+    &--right {
+      order: 2;
     }
   }
 }

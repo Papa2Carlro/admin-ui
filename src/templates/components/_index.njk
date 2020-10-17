@@ -56,3 +56,16 @@
   </div>
 
 {% endmacro %}
+
+{% macro actions(position) %}
+  <div class="section__tools">
+    <div class="section__tools-item{{ position }}">
+      <button type="submit" class="waves-effect waves-light btn section__tools-save">Save<i
+          class="material-icons right">save</i></button>
+    </div>
+    <div class="section__tools-item">
+      <button type="reset" class="waves-effect waves-light btn section__tools-back"><i
+          class="material-icons">backspace</i></button>
+    </div>
+  </div>
+{% endmacro %}

@@ -1,0 +1,41 @@
+{% import "components/_widgets.njk" as widget %}
+{% import "components/_form.njk" as form %}
+{% import "database/_global.njk" as global %}
+{% import "components/_index.njk" as components %}
+
+
+<form class="auth-setting">
+
+  <div class="auth-setting-body">
+    <div class="row">
+      <div class="col-12 col-lg-4">
+        <div class="widget">
+          <div class="widget__header">
+            <div class="widget__header-label">Position</div>
+          </div>
+
+          <div class="widget__content">
+            {% for setting in global.authSetting %}
+              {{ form.select(setting) }}
+            {% endfor %}
+          </div>
+        </div>
+
+        <div class="pt-15">
+          {{ widget.image('/static/img/stub/logo.png', 'image', 'Logo') }}
+        </div>
+      </div>
+
+      <div class="col-12 col-lg-4">
+        {{ widget.image('/static/img/auth/bg.jpg', 'image', 'Image') }}
+      </div>
+
+      <div class="col-12 col-lg-4">
+        {{ widget.css('/* Custom Css */') }}
+      </div>
+
+    </div>
+
+
+  </div>
+</form>

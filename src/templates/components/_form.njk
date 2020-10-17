@@ -1,0 +1,59 @@
+{% macro select(options) %}
+  <div class="input-field col-{{ options.column }}">
+    <select>
+      <option value="" disabled selected>{{ options.placeholder }}</option>
+
+      {% for options in options.list %}
+        <option value="{{ options.value }}">{{ options.label }}</option>
+      {% endfor %}
+    </select>
+    {% if options.label %}
+      <label>{{ options.label }}</label>
+    {% endif %}
+  </div>
+{% endmacro %}
+
+{% macro input(title, id) %}
+  <div class="input-field">
+    <input id="{{ id }}" type="text" class="validate">
+    <label for="{{ id }}">{{ title }}</label>
+  </div>
+{% endmacro %}
+
+{% macro textarea(title, id, height) %}
+  <div class="input-field">
+    <textarea id="{{ id }}"
+              {% if height %}
+                style="height: {{ height }}px"
+              {% endif %}
+              class="materialize-textarea"></textarea>
+    <label for="{{ id }}">{{ title }}</label>
+  </div>
+{% endmacro %}
+
+{% macro radio(options) %}
+  <ul class="radio">
+    <li class="radio__title color-gray1 pb-10">Enter type Website</li>
+    {% for option in options.list %}
+      <li>
+        <input class="with-gap" name="{{ options.name }}" type="radio" id="{{ option.id }}"/>
+        <label for="{{ option.id }}">{{ option.label }}</label>
+      </li>
+    {% endfor %}
+  </ul>
+{% endmacro %}
+
+{% macro checkbox(name, lists) %}
+  <ul class="checkbox">
+    {% for list in lists %}
+      <li>
+        <input name="{{ options.name }}"
+          {% if list.visible %}
+            checked
+          {% endif %}
+               type="checkbox" id="{{ list.icon }}"/>
+        <label for="{{ list.icon }}">{{ list.label }}</label>
+      </li>
+    {% endfor %}
+  </ul>
+{% endmacro %}

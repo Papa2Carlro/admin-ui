@@ -1,0 +1,61 @@
+{% import "components/_widgets.njk" as widget %}
+{% import "components/_form.njk" as form %}
+{% import "database/_global.njk" as global %}
+{% import "components/_index.njk" as components %}
+
+{% set options = {
+  name: 'site_type',
+  list: [
+    {
+      label: 'Shop',
+      id: 'shop'
+    },
+    {
+      label: 'Blog',
+      id: 'blog'
+    },
+    {
+      label: 'Lending',
+      id: 'lending'
+    }
+  ]
+} %}
+
+<form class="general-setting">
+
+  <div class="general-setting-body">
+    <div class="row">
+      <div class="col-12 col-lg-8">
+        <div class="widget">
+          <div class="widget__header">
+            <div class="widget__header-label">Setting</div>
+          </div>
+
+          <div class="widget__content">
+            <div class="widget__content-column">
+              <div class="col-12 col-lg-6">
+                {{ form.input('Name Website', 'title') }}
+                {{ form.radio(options) }}
+              </div>
+              <div class="col-12 col-lg-6">
+                {{ form.textarea('Keywords', 'keywords', '130') }}
+              </div>
+
+              <div class="col-12">
+                {{ form.textarea('Description', 'description', '140') }}
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-12 col-lg-4">
+        {{ widget.image('/static/img/stub/logo.png', 'image', 'Logo') }}
+        <div class="pt-10">
+          {{ widget.image('/static/img/stub/logo.png', 'favicone', 'Favicone') }}
+        </div>
+      </div>
+
+    </div>
+  </div>
+</form>
