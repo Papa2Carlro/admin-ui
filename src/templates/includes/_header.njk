@@ -15,32 +15,6 @@
   }
 ] %}
 
-{% set mainBtn = [
-  {
-    label: 'Profile',
-    link: '#'
-  },
-  {
-    label: 'Dashboard',
-    link: '#'
-  },
-  {
-    label: 'Github',
-    link: '#'
-  },
-  {
-    label: 'Docs',
-    link: '#'
-  },
-  {
-    label: 'divider'
-  },
-  {
-    label: 'Log Out',
-    link: '#'
-  }
-] %}
-
 <div class="header">
 
   <div class="header__body">
@@ -48,13 +22,39 @@
       {{ components.breadcrumb(breadcrumb) }}
     </div>
 
-    <div class="header__action">
+    <div class="header__tools">
 
-      <div class="header__action-btn">
-        <a class='dropdown-button btn link--default' href='#' data-activates='dropdown1'>Woody</a>
+      <ul class="header__action">
+        <li class="header__action-item">
 
-        <ul id='dropdown1' class='dropdown-content header__action-list'>
-          {% for item in mainBtn %}
+          <a class="js-search-btn header__action-search link">
+            <i class="material-icons">search</i>
+          </a>
+
+          <input placeholder="Search..." type="search" class="js-search header__action-input" name="search">
+        </li>
+
+        {% for tool in global.tools %}
+          <li class="header__action-item">
+
+            <a class="dropdown-button header__action-button link" data-activates="{{ tool.id }}" href="{{ tool.link }}">
+              <i class="material-icons">{{ tool.icon }}</i>
+            </a>
+
+            <ul id='{{ tool.id }}' class='dropdown-content header__tools-list'>
+              {% for item in tool.list %}
+                <li><a href="{{ item.link }}">{{ item.label }}</a></li>
+              {% endfor %}
+            </ul>
+          </li>
+        {% endfor %}
+      </ul>
+
+      <div class="header__tools-menu">
+        <a class='dropdown-button header__tools-button btn link--default' href='#' data-activates='menu'>Woody</a>
+
+        <ul id='menu' class='dropdown-content header__tools-list'>
+          {% for item in global.mainBtn %}
             {% if item.label === 'divider' %}
               <li class="divider"></li>
             {% else %}
@@ -69,7 +69,7 @@
   <div class="header__pages">
     <ul class="header__pages-list">
       {% for chip in global.chips %}
-        <div class="chip header__pages-item
+        <div class="chip header__pages-chip
                     {% if chip.isActive %}
                     isActive
                     {% endif %}">

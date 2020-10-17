@@ -11,7 +11,7 @@
 
     padding: map-get($spacers, 15) map-get($spacers, 10);
 
-    //border-bottom: 1px solid map-get($blues, '2');
+    border-bottom: 1px solid map-get($blues, '2');
 
     &-burger {
       width: 25px;
@@ -29,7 +29,7 @@
 
     padding: map-get($spacers, 10) map-get($spacers, 5);
 
-    //border-bottom: 1px solid map-get($blues, '2');
+    border-bottom: 1px solid map-get($blues, '2');
 
     &-avatar {
       width: 50px;

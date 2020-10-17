@@ -92,7 +92,7 @@
         #{$parent} {
           &__dropMenu {
             &--hidden {
-              display: flex;
+              display: flex !important;
             }
           }
         }

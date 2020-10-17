@@ -6,8 +6,26 @@
     isActive: true
   },
   {
+    icon: 'forum',
+    label: 'Post',
+    link: '#',
+    isActive: false
+  },
+  {
+    icon: 'library_books',
+    label: 'Catalog',
+    link: '#',
+    isActive: false
+  },
+  {
     icon: 'wallpaper',
     label: 'Images',
+    link: '#',
+    isActive: false
+  },
+  {
+    icon: 'extension',
+    label: 'Plugins',
     link: '#',
     isActive: false
   },
@@ -35,11 +53,27 @@
   ]
   },
   {
+    icon: 'comment',
+    label: 'Comments',
+    link: '#',
+    isActive: false
+  },
+  {
     icon: 'settings',
-    label: 'Settings',
+    label: 'System',
     link: '#',
     isActive: false,
     lists: [
+    {
+      label: 'Setting',
+      isActive: false,
+      link: '#'
+    },
+    {
+      label: 'Localization',
+      isActive: false,
+      link: '#'
+    },
     {
       label: 'Auth Setting',
       isActive: false,
@@ -74,5 +108,62 @@
     label: 'Settings',
     isActive: false,
     isClose: true
+  }
+] %}
+{% set mainBtn = [
+  {
+    label: 'Profile',
+    link: '#'
+  },
+  {
+    label: 'Dashboard',
+    link: '#'
+  },
+  {
+    label: 'Github',
+    link: '#'
+  },
+  {
+    label: 'Docs',
+    link: '#'
+  },
+  {
+    label: 'divider'
+  },
+  {
+    label: 'Log Out',
+    link: '#'
+  }
+] %}
+{% set tools = [
+  {
+    icon: 'language',
+    link: '#',
+    id: 'translate',
+    list: [
+    {
+      label: 'ru-Ru',
+      link: '#'
+    },
+    {
+      label: 'en-En',
+      link: '#'
+    }
+  ]
+  },
+  {
+    icon: 'home',
+    link: '#',
+    id: 'home',
+    list: [
+    {
+      label: 'http://my-site.loc',
+      link: 'http://my-site.loc'
+    },
+    {
+      label: 'http://my-site2.loc',
+      link: 'http://my-site2.loc'
+    }
+  ]
   }
 ] %}

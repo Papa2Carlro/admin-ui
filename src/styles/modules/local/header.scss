@@ -31,51 +31,49 @@
 
       display: flex;
       flex-wrap: wrap;
-
-      .chip {
-        $height: 26px;
-        height: $height;
-        cursor: pointer;
-
-        position: relative;
-
-        color: $gray2;
-        line-height: $height;
-        background: transparent;
-        border: 1px solid $gray3;
-
-        margin: 3px 0;
-        padding: 0 map-get($spacers, 10) 0 map-get($spacers, 15);
-
-        .material-icons {
-          font-size: 14px;
-
-          line-height: 19px;
-
-          width: 20px;
-          height: 18px;
-
-          display: flex;
-          align-items: center;
-          justify-content: center;
-
-          margin-left: 5px;
-          padding-left: 0;
-          border-radius: 50%;
-
-          transition: background $transTimeSuperFast $easeInOut, color $transTimeSuperFast $easeInOut;
-
-          &:hover {
-            color: $white1;
-            background: $gray5;
-          }
-        }
-      }
     }
 
-    &-item {
+    &-chip {
       display: flex;
       align-items: center;
+
+      $height: 26px;
+      height: $height;
+      cursor: pointer;
+
+      position: relative;
+
+      color: $gray2;
+      line-height: $height;
+      background: transparent;
+      border: 1px solid $gray3;
+
+      margin: 3px 0;
+      padding: 0 map-get($spacers, 10) 0 map-get($spacers, 15);
+
+      .material-icons {
+        font-size: 14px;
+
+        line-height: 19px;
+
+        width: 20px;
+        height: 18px;
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        margin-left: 5px;
+        padding-left: 0;
+        border-radius: 50%;
+
+        transition: background $transTimeSuperFast $easeInOut, color $transTimeSuperFast $easeInOut;
+
+        &:hover {
+          color: $white1;
+          background: $gray5;
+        }
+      }
 
       &.isActive {
         &.chip {
@@ -102,20 +100,64 @@
         }
       }
 
-      margin-right: map-get($spacers, 10) !important;
+      margin-right: map-get($spacers, 5) !important;
     }
   }
 
   &__action {
-    &-btn {
-      .btn {
+    @include list-unstyled;
+    display: flex;
 
-        background-color: $darken-1;
+    &-item {
+      color: $gray2;
 
-        &:hover {
-          color: $gray2;
-          background-color: $lighten-2;
-        }
+      display: flex;
+      align-items: center;
+
+      padding: 0 map-get($spacers, 10) 0 0;
+    }
+
+    &-button {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    &-search {
+      cursor: pointer;
+    }
+
+    &-search + &-input {
+      width: 0 !important;
+      margin: 0 !important;
+    }
+
+    &-search.isHidden + &-input {
+      width: 200px !important;
+      margin: 0 0 0 map-get($spacers, 10) !important;
+    }
+
+    &-input {
+      height: 34px !important;
+
+      transition: width $transTimeFast $easeInOut, margin $transTimeFast $easeInOut;
+    }
+  }
+
+  &__tools {
+    display: flex;
+    align-items: center;
+
+    .material-icons {
+      user-select: none;
+    }
+
+    &-button {
+      background-color: $darken-1;
+
+      &:hover {
+        color: $gray2;
+        background-color: $lighten-2;
       }
     }
 

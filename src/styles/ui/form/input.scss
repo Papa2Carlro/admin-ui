@@ -1,63 +1,13 @@
 .input {
-  $parent: &;
+  &__title {
+
+  }
+
+  &__body {
+
+  }
 
   &__label {
-    display: block;
-    line-height: 100%;
 
-    margin-bottom: map-get($spacers, 5);
-  }
-
-  &__description {
-    color: $gray2;
-
-    line-height: 100%;
-    font-style: italic;
-    font-family: 'Ubuntu', sans-serif;
-  }
-
-  &--text {
-    #{$parent} {
-      &__body {
-        width: 100%;
-
-        border: 1px solid $gray4;
-        padding: 7px map-get($spacers, 10);
-
-        color: $gray2;
-        border-radius: 5px;
-
-        transition: border $transTimeFast $easeInOut, box-shadow $transTimeFast $easeInOut;
-
-        &:focus {
-          border: 1px solid $purple3;
-          box-shadow: -1px 0px 9px 1px rgba($purple3, 0.25);
-        }
-      }
-    }
-  }
-
-  &--textarea {
-    #{$parent} {
-      &__body {
-        outline: none;
-        width: 100%;
-        min-height: 100px;
-
-        border: 1px solid $gray4;
-        padding: 7px map-get($spacers, 10);
-
-        color: $gray2;
-        border-radius: 5px;
-
-        transition: border $transTimeFast $easeInOut, box-shadow $transTimeFast $easeInOut;
-
-        &:focus {
-
-          border: 1px solid $purple3;
-          box-shadow: -1px 0px 9px 1px rgba($purple3, 0.25);
-        }
-      }
-    }
   }
 }

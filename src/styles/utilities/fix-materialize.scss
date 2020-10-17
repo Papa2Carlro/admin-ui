@@ -1,3 +1,20 @@
 nav {
   background: transparent;
+
+  ul a {
+    padding: 0;
+  }
+}
+table {
+  &.highlight>tbody>tr {
+    &:hover {
+      background-color: $white1;
+    }
+  }
+
+  &.striped>tbody>tr {
+    &:nth-child(odd) {
+      background-color: $white1;
+    }
+  }
 }
