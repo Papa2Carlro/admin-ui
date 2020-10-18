@@ -36,6 +36,14 @@
               </li>
               <li>
                 <div class="collapsible-header">
+                  <div class="collapsible-header__label">Auth Setting</div>
+                  {{ components.actions('') }}</div>
+                <div class="collapsible-body">
+                  {% include "setting/auth.njk" %}
+                </div>
+              </li>
+              <li>
+                <div class="collapsible-header">
                   <div class="collapsible-header__label">Menu Setting</div>
                   {{ components.actions('') }}
                 </div>
@@ -45,10 +53,11 @@
               </li>
               <li>
                 <div class="collapsible-header">
-                  <div class="collapsible-header__label">Auth Setting</div>
-                  {{ components.actions('') }}</div>
+                  <div class="collapsible-header__label">Icons</div>
+                  {{ components.actions('') }}
+                </div>
                 <div class="collapsible-body">
-                  {% include "setting/auth.njk" %}
+                  {% include "setting/icons.njk" %}
                 </div>
               </li>
             </ul>

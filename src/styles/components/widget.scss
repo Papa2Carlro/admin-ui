@@ -24,6 +24,28 @@
     }
   }
 
+  &__icons {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+
+    color: $gray1;
+
+    padding: map-get($spacers, 10) map-get($spacers, 15) !important;
+
+    &-item {
+      display: flex;
+      align-items: center;
+      flex-direction: column;
+
+      padding: 0 0 map-get($spacers, 20);
+
+      .material-icons {
+        font-size: 40px;
+        user-select: none;
+      }
+    }
+  }
+
   &__content {
 
     .select-wrapper {

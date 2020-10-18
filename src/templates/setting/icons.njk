@@ -25,16 +25,21 @@
 
   <div class="menu-setting-body">
     <div class="row">
-      <div class="col-12 col-lg-4">
+      <div class="col-12">
         <div class="widget">
           <div class="widget__header">
-            <div class="widget__header-label">Menu Setting</div>
+            <div class="widget__header-label">Materialize Icons</div>
           </div>
 
           <div class="widget__content">
-            <div class="widget__checkbox">
-              {{ form.checkbox('menu', global.menus) }}
-            </div>
+            <ul class="widget__icons">
+              {% for icon in global.icons %}
+                <li class="widget__icons-item">
+                  <i class="material-icons">{{ icon }}</i>
+                  <div class="widget__icons-label">{{ icon }}</div>
+                </li>
+              {% endfor %}
+            </ul>
           </div>
         </div>
       </div>

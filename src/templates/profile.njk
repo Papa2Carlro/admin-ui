@@ -8,8 +8,8 @@
 
 {% set option = {
   label: false,
-  placeholder: 'Main site language',
-  column: '',
+  placeholder: 'Main admin language',
+  column: ' pt-15',
   list: [
     {
       label: 'ru-Ru',
@@ -18,6 +18,22 @@
     {
       label: 'en-En',
       value: 'en-En'
+    }
+  ]
+} %}
+
+{% set option_name = {
+  label: false,
+  placeholder: 'Display name',
+  column: '',
+  list: [
+    {
+      label: 'Name (Label)',
+      value: 'name'
+    },
+    {
+      label: 'Nickname (Label)',
+      value: 'nickname'
     }
   ]
 } %}
@@ -54,11 +70,12 @@
                   <div class="col-12 col-lg-6">
                     {{ form.input('Name', 'firs_name') }}
                     {{ form.input('Nickname', 'nickname') }}
-                    {{ form.select(option) }}
+                    {{ form.input('Email *', 'email') }}
                   </div>
                   <div class="col-12 col-lg-6">
                     {{ form.input('Surname', 'last_name') }}
-                    {{ form.input('Email *', 'email') }}
+                    {{ form.select(option_name) }}
+                    {{ form.select(option) }}
                   </div>
                   <div class="col-12">
                     <h5 class="color-gray1">About me</h5>
